@@ -1,0 +1,140 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <!-- Back Arrow -->
+
+    <!-- Verification Title -->
+
+    <!-- Subtitle -->
+
+    <!-- OTP Input Boxes -->
+    <ImageView
+        android:id="@+id/backArrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:contentDescription="Back"
+        android:src="@drawable/ic_back_arrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="292dp"
+        android:text="Verification"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/backArrow" />
+
+    <TextView
+        android:id="@+id/subtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:text="We’ve sent you the verification code to your email"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+    <EditText
+        android:id="@+id/otpBox1"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/otp_box"
+        android:gravity="center"
+        android:inputType="number"
+        android:maxLength="1"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/subtitle" />
+
+    <EditText
+        android:id="@+id/otpBox2"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/otp_box"
+        android:gravity="center"
+        android:inputType="number"
+        android:maxLength="1"
+        android:textSize="18sp"
+        app:layout_constraintTop_toTopOf="@id/otpBox1"
+        app:layout_constraintStart_toEndOf="@id/otpBox1"
+        android:layout_marginStart="16dp" />
+
+    <EditText
+        android:id="@+id/otpBox3"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/otp_box"
+        android:gravity="center"
+        android:inputType="number"
+        android:maxLength="1"
+        android:textSize="18sp"
+        app:layout_constraintTop_toTopOf="@id/otpBox1"
+        app:layout_constraintStart_toEndOf="@id/otpBox2"
+        android:layout_marginStart="16dp" />
+
+    <EditText
+        android:id="@+id/otpBox4"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/otp_box"
+        android:gravity="center"
+        android:inputType="number"
+        android:maxLength="1"
+        android:textSize="18sp"
+        app:layout_constraintTop_toTopOf="@id/otpBox1"
+        app:layout_constraintStart_toEndOf="@id/otpBox3"
+        android:layout_marginStart="16dp" />
+
+    <!-- Continue Button -->
+
+    <Button
+        android:id="@+id/continueButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="@color/blue"
+        android:drawableEnd="@drawable/ic_arrow"
+        android:text="CONTINUE"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/otpBox1" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="183dp"
+        android:layout_height="161dp"
+        app:layout_constraintBottom_toTopOf="@+id/title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/logo" />
+
+    <!-- Resend Code Timer -->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

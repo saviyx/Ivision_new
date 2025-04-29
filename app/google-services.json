@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "402214357368",
+    "project_id": "ivision-67498",
+    "storage_bucket": "ivision-67498.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:402214357368:android:a3f35e0b5ce7795339a08d",
+        "android_client_info": {
+          "package_name": "lk.javainstitute.ivision"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5K4aatwK1PbBtm35KR8PeG_K4dsSiHPI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
