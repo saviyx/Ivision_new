@@ -112,6 +112,7 @@
         android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/background_wave3"
+        app:layout_constraintTop_toTopOf="@+id/background_wave3"
         app:srcCompat="@drawable/home" />
 
     <ImageView
@@ -122,6 +123,7 @@
         android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView13"
+        app:layout_constraintTop_toTopOf="@+id/background_wave3"
         app:srcCompat="@drawable/addevent" />
 
     <ImageView
@@ -133,6 +135,7 @@
         app:layout_constraintEnd_toEndOf="@+id/background_wave3"
         app:layout_constraintHorizontal_bias="0.589"
         app:layout_constraintStart_toEndOf="@+id/imageView14"
+        app:layout_constraintTop_toTopOf="@+id/background_wave3"
         app:srcCompat="@drawable/more" />
 
     <TextView
