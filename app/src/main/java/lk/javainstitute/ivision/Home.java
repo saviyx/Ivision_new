@@ -22,7 +22,7 @@ public class Home extends AppCompatActivity {
             return insets;
         });
 
-//        loadFragment(new home_fragment());
+        loadFragment(new Home_Fragment());
     }
 
     private boolean loadFragment(Fragment fragment) {

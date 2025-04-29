@@ -46,7 +46,7 @@ public class Home_Fragment extends Fragment {
         LinearLayout glassesStatusCard = view.findViewById(R.id.glasses_status);
 
         glassesStatusCard.setOnClickListener(v -> {
-            Fragment glassesStatusFragment = new Glasses_Status_Fragment();
+            Fragment glassesStatusFragment = new Glass_Fragment();
 
 
             FragmentTransaction transaction = requireActivity()
