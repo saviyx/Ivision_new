@@ -116,7 +116,7 @@
         app:srcCompat="@drawable/home" />
 
     <ImageView
-        android:id="@+id/imageView14"
+        android:id="@+id/appoinment"
         android:layout_width="35dp"
         android:layout_height="37dp"
         android:layout_marginStart="96dp"
@@ -134,7 +134,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/background_wave3"
         app:layout_constraintHorizontal_bias="0.589"
-        app:layout_constraintStart_toEndOf="@+id/imageView14"
+        app:layout_constraintStart_toEndOf="@+id/appoinment"
         app:layout_constraintTop_toTopOf="@+id/background_wave3"
         app:srcCompat="@drawable/more" />
 
@@ -156,10 +156,10 @@
         android:text="Appointment"
         android:textAlignment="center"
         android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView14"
+        app:layout_constraintEnd_toEndOf="@+id/appoinment"
         app:layout_constraintHorizontal_bias="0.583"
-        app:layout_constraintStart_toStartOf="@+id/imageView14"
-        app:layout_constraintTop_toBottomOf="@+id/imageView14" />
+        app:layout_constraintStart_toStartOf="@+id/appoinment"
+        app:layout_constraintTop_toBottomOf="@+id/appoinment" />
 
     <TextView
         android:id="@+id/textView15"
