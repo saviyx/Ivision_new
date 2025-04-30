@@ -10,13 +10,13 @@ import androidx.core.view.WindowInsetsCompat;
 
 import lk.javainstitute.ivision.R;
 
-public class Test extends AppCompatActivity {
+public class Admin_home extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_test);
+        setContentView(R.layout.activity_admin_home);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
