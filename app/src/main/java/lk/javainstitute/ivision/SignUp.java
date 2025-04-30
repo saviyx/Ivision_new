@@ -75,8 +75,6 @@ public class SignUp extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-
-
                 TextInputLayout nameInput = findViewById(R.id.fullNameInput);
                 TextInputLayout mobileNumber = findViewById(R.id.MobileInput);
                 TextInputLayout emailInput = findViewById(R.id.EmailInput);
@@ -203,7 +201,7 @@ public class SignUp extends AppCompatActivity {
             RequestBody body = RequestBody.create(json, MediaType.get("application/json; charset=utf-8"));
 
             Request request = new Request.Builder()
-                    .url("https://3cca-111-223-178-176.ngrok-free.app/Ivision/emailSend")
+                    .url("https://4aad-175-157-23-35.ngrok-free.app/Ivision/emailSend")
                     .post(body)
                     .build();
 
