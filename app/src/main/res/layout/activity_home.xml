@@ -80,10 +80,10 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
-        android:id="@+id/imageView10"
+        android:id="@+id/call"
         android:layout_width="39dp"
         android:layout_height="33dp"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="@+id/profile_image"
@@ -96,11 +96,12 @@
         android:id="@+id/imageView11"
         android:layout_width="32dp"
         android:layout_height="32dp"
+        android:layout_marginStart="20dp"
         android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView10"
+        app:layout_constraintBottom_toBottomOf="@+id/call"
         app:layout_constraintEnd_toEndOf="@+id/background_wave2"
-        app:layout_constraintStart_toEndOf="@+id/imageView10"
-        app:layout_constraintTop_toTopOf="@+id/imageView10"
+        app:layout_constraintStart_toEndOf="@+id/call"
+        app:layout_constraintTop_toTopOf="@+id/call"
         app:srcCompat="@drawable/placeholder" />
 
     <ImageView

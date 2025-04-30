@@ -1,5 +1,7 @@
 package lk.javainstitute.ivision;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.widget.ImageView;
 
@@ -47,17 +49,17 @@ public class Home extends AppCompatActivity {
             transaction.commit();
         });
 
-
+        // Set up home button click listener
         ImageView home = findViewById(R.id.home);
         home.setOnClickListener(v -> {
-            // Create new appointment fragment
+            // Create new home fragment
             Fragment homeFragment = new Home_Fragment();
 
             // Get fragment manager from this activity
             FragmentTransaction transaction = getSupportFragmentManager()
                     .beginTransaction();
 
-            // Replace current fragment with appointment fragment
+            // Replace current fragment with home fragment
             transaction.replace(R.id.main_scrollview, homeFragment);
 
             // Add to back stack so user can navigate back
@@ -67,6 +69,13 @@ public class Home extends AppCompatActivity {
             transaction.commit();
         });
 
+        // Set up call button click listener
+        ImageView callButton = findViewById(R.id.call); // Assuming the call ImageView has id 'call'
+        callButton.setOnClickListener(v -> {
+            // Open the dial pad
+            Intent dialIntent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:0374320678"));
+            startActivity(dialIntent);
+        });
     }
 
     private boolean loadFragment(Fragment fragment) {
