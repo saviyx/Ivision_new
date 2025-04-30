@@ -90,7 +90,7 @@ public class Verification extends AppCompatActivity {
                                 editor.apply();
 
                                 new Alert().showAlert(Verification.this,"Done!","Succesfully logged" );
-                                Intent intent = new Intent(Verification.this, Home_Fragment.class);
+                                Intent intent = new Intent(Verification.this, Home.class);
                                 startActivity(intent);
                                 finish();
 

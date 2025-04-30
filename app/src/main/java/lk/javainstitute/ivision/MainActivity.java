@@ -222,7 +222,7 @@ public class MainActivity extends AppCompatActivity {
 
                                                             loading.stop();
                                                             new Alert().showAlert(MainActivity.this,"Done!","Succesfully logged" );
-                                                            Intent intent = new Intent(MainActivity.this, Home_Fragment.class);
+                                                            Intent intent = new Intent(MainActivity.this, Home.class);
                                                             startActivity(intent);
                                                             finish();
 
