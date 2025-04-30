@@ -14,6 +14,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -70,6 +71,32 @@ public class Appoinment_Fragment extends Fragment {
             Toast.makeText(requireContext(),
                     "Appointment scheduled for " + selectedDate,
                     Toast.LENGTH_LONG).show();
+
+            // Create new View_Appointment fragment
+            Fragment viewAppointment = new View_Appointment();
+
+            // Create bundle and add the selected date
+            Bundle args = new Bundle();
+            args.putString("selected_date", selectedDate);
+
+            // Set arguments to the fragment
+            viewAppointment.setArguments(args);
+
+            FragmentTransaction transaction = requireActivity()
+                    .getSupportFragmentManager()
+                    .beginTransaction();
+
+            // Hide this fragment
+            transaction.hide(Appoinment_Fragment.this);
+
+            // Add the detail fragment to your activity container
+            transaction.add(R.id.main_scrollview, viewAppointment);
+
+            // Add to back stack so pressing BACK will remove detail and unhide this
+            transaction.addToBackStack(null);
+
+            // Commit
+            transaction.commit();
 
             // Here you would typically save the appointment data
             // to a database or send it to a server
