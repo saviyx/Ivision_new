@@ -3,4 +3,221 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".View_Appointment"/>
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".appointment_fragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/background_wave"
+            android:layout_width="0dp"
+            android:layout_height="250dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/bg_gradient"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/imageView18"
+            android:layout_width="158dp"
+            android:layout_height="159dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginBottom="12dp"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_name"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/ani" />
+
+        <TextView
+            android:id="@+id/my_appointments2"
+            android:layout_width="251dp"
+            android:layout_height="49dp"
+            android:layout_marginTop="60dp"
+            android:text="View Appointments"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/background_wave" />
+
+        <TextView
+            android:id="@+id/welcome_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="52dp"
+            android:text="Welcome!"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/background_wave" />
+
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Zhafira"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/welcome_text"
+            app:layout_constraintTop_toBottomOf="@+id/welcome_text" />
+
+        <ImageView
+            android:id="@+id/doctor_image"
+            android:layout_width="202dp"
+            android:layout_height="263dp"
+            android:layout_marginTop="32dp"
+
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.923"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/background_wave"
+            app:srcCompat="@drawable/doctor3" />
+
+
+        <RelativeLayout
+            android:layout_width="374dp"
+            android:layout_height="264dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/rounded_bg"
+            android:backgroundTint="@color/light_blue"
+            android:padding="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.488"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/my_appointments2"
+            app:layout_constraintVertical_bias="0.0">
+
+            <!-- Title -->
+
+            <!-- Calendar icon -->
+
+            <TextView
+                android:id="@+id/tvTitle3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="101dp"
+                android:text="Amount :"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <!-- Date -->
+
+            <!-- Appointment Button -->
+
+            <TextView
+                android:id="@+id/tvTitle5"
+                android:layout_width="314dp"
+                android:layout_height="36dp"
+                android:layout_below="@+id/tvTitle3"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="23dp"
+                android:layout_marginEnd="28dp"
+                android:text="Not Paid"
+                android:textAlignment="center"
+                android:textColor="@color/design_default_color_error"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="322dp"
+                android:layout_height="34dp"
+                android:layout_below="@id/tvTitle"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="61dp"
+                android:layout_marginTop="-28dp"
+                android:layout_marginEnd="129dp"
+                android:text="30/04/2025"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tvDate3"
+                android:layout_width="200dp"
+                android:layout_height="33dp"
+                android:layout_below="@+id/tvDate"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="75dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="87dp"
+                android:text="11.30 - 12.00 A.M"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date :"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvTitle4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvTitle"
+                android:layout_marginTop="26dp"
+                android:text="Time :"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnAppointment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView22"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="34dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginEnd="30dp"
+                android:backgroundTint="@color/design_default_color_secondary"
+                android:text="Pay"
+                android:textColor="@color/black"
+                app:rippleColor="@color/black" />
+
+            <TextView
+                android:id="@+id/textView22"
+                android:layout_width="93dp"
+                android:layout_height="29dp"
+                android:layout_alignTop="@+id/tvTitle3"
+                android:layout_marginStart="13dp"
+                android:layout_marginTop="-1dp"
+                android:layout_toEndOf="@+id/tvTitle3"
+                android:text="Rs.1000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</FrameLayout>
+
+
+
+
