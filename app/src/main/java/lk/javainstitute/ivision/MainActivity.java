@@ -300,7 +300,7 @@ public class MainActivity extends AppCompatActivity {
             RequestBody body = RequestBody.create(json, MediaType.get("application/json; charset=utf-8"));
 
             Request request = new Request.Builder()
-                    .url("https://3cca-111-223-178-176.ngrok-free.app/Ivision/emailSend")
+                    .url("https://4aad-175-157-23-35.ngrok-free.app/Ivision/emailSend")
                     .post(body)
                     .build();
 
@@ -337,7 +337,7 @@ public class MainActivity extends AppCompatActivity {
             RequestBody body = RequestBody.create(json, MediaType.get("application/json; charset=utf-8"));
 
             Request request = new Request.Builder()
-                    .url("https://3cca-111-223-178-176.ngrok-free.app/Ivision/resetPawssword")
+                    .url("https://4aad-175-157-23-35.ngrok-free.app/Ivision/resetPawssword")
                     .post(body)
                     .build();
 
