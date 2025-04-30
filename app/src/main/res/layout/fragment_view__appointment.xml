@@ -185,7 +185,7 @@
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/btnAppointment"
+                android:id="@+id/pay"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/textView22"
@@ -203,7 +203,7 @@
                 android:id="@+id/btnAppointment2"
                 android:layout_width="298dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/btnAppointment"
+                android:layout_below="@+id/pay"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
                 android:layout_marginStart="36dp"

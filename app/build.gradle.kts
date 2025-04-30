@@ -56,4 +56,8 @@ dependencies {
     implementation ("com.airbnb.android:lottie:6.1.0")
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
     implementation("com.google.code.gson:gson:2.11.0")
+
+    implementation("com.github.PayHereDevs:payhere-android-sdk:v3.0.17")
+    implementation("androidx.appcompat:appcompat:1.6.0") // ignore if you have already added
+    implementation("com.google.code.gson:gson:2.8.0") // ignore if you have already added
 }
