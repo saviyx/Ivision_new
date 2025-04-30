@@ -31,7 +31,7 @@ public class Home extends AppCompatActivity {
         ImageView appointment = findViewById(R.id.appoinment);
         appointment.setOnClickListener(v -> {
             // Create new appointment fragment
-            Fragment appointmentFragment = new Appoinment_Fragment();
+            Fragment appointmentFragment = new View_Appointment();
 
             // Get fragment manager from this activity
             FragmentTransaction transaction = getSupportFragmentManager()
@@ -46,6 +46,27 @@ public class Home extends AppCompatActivity {
             // Commit the transaction
             transaction.commit();
         });
+
+
+        ImageView home = findViewById(R.id.home);
+        home.setOnClickListener(v -> {
+            // Create new appointment fragment
+            Fragment homeFragment = new Home_Fragment();
+
+            // Get fragment manager from this activity
+            FragmentTransaction transaction = getSupportFragmentManager()
+                    .beginTransaction();
+
+            // Replace current fragment with appointment fragment
+            transaction.replace(R.id.main_scrollview, homeFragment);
+
+            // Add to back stack so user can navigate back
+            transaction.addToBackStack(null);
+
+            // Commit the transaction
+            transaction.commit();
+        });
+
     }
 
     private boolean loadFragment(Fragment fragment) {
