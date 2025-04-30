@@ -5,6 +5,177 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Admin.Admin_home">
+    android:background="@color/white"
+    tools:context=".Home">
+
+    <!-- Background Image -->
+
+    <!-- Profile Image -->
+
+    <!-- Notification Icon -->
+
+    <!-- Welcome Text -->
+
+    <ImageView
+        android:id="@+id/background_wave2"
+        android:layout_width="408dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="2dp"
+        android:scaleType="fitXY"
+        android:src="@color/material_dynamic_neutral100"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/background_wave3"
+        android:layout_width="408dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="1dp"
+        android:scaleType="fitXY"
+        android:src="@color/material_dynamic_neutral_variant95"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/profile_image"
+        android:layout_width="49dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="8dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/RoundedImage"
+        app:strokeColor="@color/white"
+        app:strokeWidth="2dp" />
+
+    <!-- Urgent Care Button -->
+
+    <!-- Doctor Image -->
+
+    <!-- Ecare Services -->
+
+    <!-- Service Icons -->
+
+    <!-- Appointment Section -->
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="IVision Eye Care Center"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/profile_image"
+        app:layout_constraintStart_toEndOf="@+id/profile_image"
+        app:layout_constraintTop_toTopOf="@+id/profile_image"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="33dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/background_wave3"
+        app:layout_constraintTop_toTopOf="@+id/background_wave3"
+        app:srcCompat="@drawable/home" />
+
+    <ImageView
+        android:id="@+id/appoinment"
+        android:layout_width="35dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView13"
+        app:layout_constraintTop_toTopOf="@+id/background_wave3"
+        app:srcCompat="@drawable/addevent" />
+
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="39dp"
+        android:layout_height="34dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/background_wave3"
+        app:layout_constraintHorizontal_bias="0.589"
+        app:layout_constraintStart_toEndOf="@+id/appoinment"
+        app:layout_constraintTop_toTopOf="@+id/background_wave3"
+        app:srcCompat="@drawable/more" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="70dp"
+        android:layout_height="14dp"
+        android:text="Home"
+        android:textAlignment="center"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView13"
+        app:layout_constraintStart_toStartOf="@+id/imageView13"
+        app:layout_constraintTop_toBottomOf="@+id/imageView13" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="59dp"
+        android:layout_height="12dp"
+        android:text="View"
+        android:textAlignment="center"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="@+id/appoinment"
+        app:layout_constraintHorizontal_bias="0.583"
+        app:layout_constraintStart_toStartOf="@+id/appoinment"
+        app:layout_constraintTop_toBottomOf="@+id/appoinment" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="More"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView15"
+        app:layout_constraintHorizontal_bias="0.562"
+        app:layout_constraintStart_toStartOf="@+id/imageView15"
+        app:layout_constraintTop_toBottomOf="@+id/imageView15" />
+
+    <ScrollView
+        android:id="@+id/home_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/background_wave3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/background_wave2">
+
+        <LinearLayout
+            android:id="@+id/main_scrollview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="58dp"
+        android:layout_height="25dp"
+        android:text="Admin"
+        android:textColor="@color/design_default_color_error"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/background_wave2"
+        app:layout_constraintHorizontal_bias="0.84"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        tools:layout_editor_absoluteY="16dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
