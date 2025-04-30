@@ -215,16 +215,16 @@ public class MainActivity extends AppCompatActivity {
 
                                                         if (verified) {
 
-//                                                            SharedPreferences sharedPreferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
-//                                                            SharedPreferences.Editor editor = sharedPreferences.edit();
-//                                                            editor.putString("Logged_userId", task.getResult().getDocuments().get(0).getId());
-//                                                            editor.apply();
+                                                            SharedPreferences sharedPreferences = getSharedPreferences("USERPREF", MODE_PRIVATE);
+                                                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                                                            editor.putString("Logged_userId", task.getResult().getDocuments().get(0).getId());
+                                                            editor.apply();
 
                                                             loading.stop();
                                                             new Alert().showAlert(MainActivity.this,"Done!","Succesfully logged" );
-//                                                            Intent intent = new Intent(SignIn.this, Dashboard.class);
-//                                                            startActivity(intent);
-//                                                            finish();
+                                                            Intent intent = new Intent(MainActivity.this, Home_Fragment.class);
+                                                            startActivity(intent);
+                                                            finish();
 
                                                         } else {
                                                             loading.stop();

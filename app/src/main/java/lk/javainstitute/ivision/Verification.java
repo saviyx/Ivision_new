@@ -1,6 +1,7 @@
 package lk.javainstitute.ivision;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -83,7 +84,13 @@ public class Verification extends AppCompatActivity {
                                 String userId = queryDocumentSnapshots.getDocuments().get(0).getId();
                                 firestore.collection("User").document(userId).update("verified",true);
 
-                                Intent intent = new Intent(Verification.this , MainActivity.class);
+                                SharedPreferences sharedPreferences = getSharedPreferences("USERPREF", MODE_PRIVATE);
+                                SharedPreferences.Editor editor = sharedPreferences.edit();
+                                editor.putString("Logged_userId", userId);
+                                editor.apply();
+
+                                new Alert().showAlert(Verification.this,"Done!","Succesfully logged" );
+                                Intent intent = new Intent(Verification.this, Home_Fragment.class);
                                 startActivity(intent);
                                 finish();
 
