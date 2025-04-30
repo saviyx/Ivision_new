@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Only add internet permissions - no SDK activity needed for WebView implementation -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
@@ -15,14 +16,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Ivision"
         tools:targetApi="31">
-
-
-        <activity
-            android:name=".Admin.Test"
-            android:exported="false" />
-        <activity
-            android:name=".Admin.Admin_home"
-            android:exported="false" />
         <activity
             android:name=".Home"
             android:exported="false" />
@@ -43,8 +36,7 @@
             android:exported="false" />
         <activity
             android:name=".SignUp"
-            android:exported="false" /> <!-- PayHere Activity declaration -->
-
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -54,9 +46,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
-
     </application>
 
 </manifest>

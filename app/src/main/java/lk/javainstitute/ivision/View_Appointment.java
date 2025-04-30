@@ -17,6 +17,12 @@ public class View_Appointment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_view__appointment, container, false);
+        return view;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
         // Initialize the TextView
         tvDate = view.findViewById(R.id.tvDate);
@@ -33,8 +39,5 @@ public class View_Appointment extends Fragment {
                 tvDate.setText(selectedDate);
             }
         }
-
-        return view;
     }
-
 }
