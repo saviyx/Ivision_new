@@ -21,6 +21,9 @@
             android:name=".Admin.Test"
             android:exported="false" />
         <activity
+            android:name=".Admin.Admin_home"
+            android:exported="false" />
+        <activity
             android:name=".Home"
             android:exported="false" />
         <activity
