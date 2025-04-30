@@ -23,68 +23,96 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <RelativeLayout
-        android:id="@+id/relativeLayout2"
-        android:layout_width="380dp"
-        android:layout_height="159dp"
-        android:layout_marginBottom="476dp"
-        android:background="@drawable/rounded_bg"
-        android:backgroundTint="@color/light_blue"
-        android:padding="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="402dp"
+        android:layout_height="580dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="1dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/my_appointments2"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toBottomOf="@+id/textView21">
 
-        <!-- Title -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <!-- Calendar icon -->
+            <RelativeLayout
+                android:id="@+id/relativeLayout2"
+                android:layout_width="380dp"
+                android:layout_height="159dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/rounded_bg"
+                android:backgroundTint="@color/light_blue"
+                android:padding="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
 
-        <!-- Date -->
+                <!-- Title -->
 
-        <!-- Appointment Button -->
+                <!-- Calendar icon -->
 
-        <TextView
-            android:id="@+id/tvTitle"
-            android:layout_width="234dp"
-            android:layout_height="39dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="130dp"
-            android:text="Saman Kumara"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+                <!-- Date -->
 
-        <TextView
-            android:id="@+id/tvDate"
-            android:layout_width="137dp"
-            android:layout_height="40dp"
-            android:layout_below="@id/tvTitle"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="245dp"
-            android:layout_marginTop="-39dp"
-            android:layout_marginEnd="14dp"
-            android:text="30/04/2025"
-            android:textColor="@color/black"
-            android:textSize="16sp" />
+                <!-- Appointment Button -->
 
-        <TextView
-            android:id="@+id/tvTitle2"
-            android:layout_width="364dp"
-            android:layout_height="77dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="66dp"
-            android:layout_marginEnd="0dp"
-            android:text="Best Service"
-            android:textColor="@color/black"
-            android:textSize="18sp" />
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="234dp"
+                    android:layout_height="39dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="130dp"
+                    android:text="Saman Kumara"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-    </RelativeLayout>
+                <TextView
+                    android:id="@+id/tvDate"
+                    android:layout_width="137dp"
+                    android:layout_height="40dp"
+                    android:layout_below="@id/tvTitle"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="245dp"
+                    android:layout_marginTop="-39dp"
+                    android:layout_marginEnd="14dp"
+                    android:text="30/04/2025"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tvTitle2"
+                    android:layout_width="364dp"
+                    android:layout_height="77dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="66dp"
+                    android:layout_marginEnd="0dp"
+                    android:text="Best Service"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+            </RelativeLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
+        android:backgroundTint="@color/design_default_color_secondary"
+        android:text="Add Review"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
