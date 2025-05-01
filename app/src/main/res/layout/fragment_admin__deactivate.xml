@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray"
+    android:background="@color/white"
     tools:context=".Home">
 
     <ImageView
@@ -94,14 +94,17 @@
         android:layout_width="196dp"
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
         android:backgroundTint="@color/design_default_color_error"
         android:text="Deactivate Admin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextText3"
+        app:layout_constraintVertical_bias="1.0" />
 
     <EditText
         android:id="@+id/editTextText"
@@ -109,8 +112,8 @@
         android:layout_height="46dp"
         android:layout_marginTop="76dp"
         android:ems="10"
+        android:hint="Savindu"
         android:inputType="text"
-        android:text="Savindu"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="@+id/textView41"
         app:layout_constraintHorizontal_bias="0.461"
@@ -123,8 +126,8 @@
         android:layout_height="49dp"
         android:layout_marginTop="20dp"
         android:ems="10"
+        android:hint="savindu@gmail.com"
         android:inputType="text"
-        android:text="savindu@gmail.com"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="@+id/editTextText"
         app:layout_constraintHorizontal_bias="0.0"
@@ -137,8 +140,8 @@
         android:layout_height="44dp"
         android:layout_marginTop="24dp"
         android:ems="10"
+        android:hint="0771077618"
         android:inputType="text"
-        android:text="0771077618"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="@+id/editTextText2"
         app:layout_constraintHorizontal_bias="1.0"
