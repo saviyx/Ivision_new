@@ -26,6 +26,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicBoolean;
 
+import lk.javainstitute.ivision.Admin.Admin_home;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -211,9 +212,11 @@ public class MainActivity extends AppCompatActivity {
                                                     if (documentSnapshot.exists()) {
                                                         Log.e("FirestoreError", "Done!");
 
-                                                        boolean verified = documentSnapshot.getBoolean("verified");
+                                                        String userType = documentSnapshot.getString("type");
+                                                        Boolean verified = documentSnapshot.getBoolean("verified");
 
-                                                        if (verified) {
+                                                        // Allow login if verified is true OR user is an admin
+                                                        if (Boolean.TRUE.equals(verified) || "admin".equals(userType)) {
 
                                                             SharedPreferences sharedPreferences = getSharedPreferences("USERPREF", MODE_PRIVATE);
                                                             SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -221,33 +224,39 @@ public class MainActivity extends AppCompatActivity {
                                                             editor.apply();
 
                                                             loading.stop();
-                                                            new Alert().showAlert(MainActivity.this,"Done!","Succesfully logged" );
-                                                            Intent intent = new Intent(MainActivity.this, Home.class);
-                                                            startActivity(intent);
-                                                            finish();
+                                                            new Alert().showAlert(MainActivity.this, "Done!", "Successfully logged");
+
+                                                            if ("admin".equals(userType)) {
+                                                                Intent intent = new Intent(MainActivity.this, Admin_home.class);
+                                                                startActivity(intent);
+                                                                finish();
+                                                            } else {
+                                                                Intent intent = new Intent(MainActivity.this, Home.class);
+                                                                startActivity(intent);
+                                                                finish();
+                                                            }
 
                                                         } else {
                                                             loading.stop();
 
-
-                                                            firestore.collection("User").document(task.getResult().getDocuments().get(0).getId()).update("vCode", Integer.toString(code));
+                                                            firestore.collection("User").document(task.getResult().getDocuments().get(0).getId())
+                                                                    .update("vCode", Integer.toString(code));
 
                                                             boolean status = sendEmail(documentSnapshot.getString("email"), code);
 
                                                             Intent intent = new Intent(MainActivity.this, Verification.class);
                                                             intent.putExtra("User_Id", task.getResult().getDocuments().get(0).getId());
 
-
-                                                            new Alert().showAlert(MainActivity.this,"Opps..","Please Verify Your Account" );
+                                                            new Alert().showAlert(MainActivity.this, "Oops..", "Please Verify Your Account");
                                                             startActivity(intent);
-
                                                         }
+
                                                     } else {
                                                         loading.stop();
-                                                        new Alert().showAlert(MainActivity.this,"Opps..","Something Went Wrong" );
-//
+                                                        new Alert().showAlert(MainActivity.this, "Oops..", "Something Went Wrong");
                                                     }
                                                 });
+
 
                                             }
 
