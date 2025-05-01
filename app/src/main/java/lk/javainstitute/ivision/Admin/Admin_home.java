@@ -29,6 +29,8 @@ public class Admin_home extends AppCompatActivity {
         // Load initial fragment
         loadFragment(new Admin_Home_Fragment());
 
+
+
     }
 
     private boolean loadFragment(Fragment fragment) {
