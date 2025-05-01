@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,8 +36,10 @@ public class Home_Fragment extends Fragment {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
 
+                Log.i("TAG", "onSuccess: " + documentSnapshot);
+
                 TextView name = view.findViewById(R.id.user_name);
-                name.setText(documentSnapshot.getString("name"));
+                name.setText(documentSnapshot.getString("Name"));
 
             }
         }).addOnFailureListener(new OnFailureListener() {
