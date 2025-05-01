@@ -5,16 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@android:color/white"
     tools:context=".Home">
-
-    <!-- Background Image -->
-
-    <!-- Profile Image -->
-
-    <!-- Notification Icon -->
-
-    <!-- Welcome Text -->
 
     <ImageView
         android:id="@+id/background_wave2"
@@ -22,9 +14,10 @@
         android:layout_height="57dp"
         android:layout_marginStart="1dp"
         android:layout_marginEnd="2dp"
+        android:background="@drawable/wave2_background"
         android:scaleType="fitXY"
-        android:src="@color/material_dynamic_neutral100"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -34,10 +27,9 @@
         android:layout_height="73dp"
         android:layout_marginEnd="1dp"
         android:scaleType="fitXY"
-        android:src="@color/material_dynamic_neutral_variant95"
+        android:background="@drawable/wave3_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.imageview.ShapeableImageView
@@ -51,18 +43,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:shapeAppearanceOverlay="@style/RoundedImage"
-        app:strokeColor="@color/white"
+        app:strokeColor="@android:color/white"
         app:strokeWidth="2dp" />
-
-    <!-- Urgent Care Button -->
-
-    <!-- Doctor Image -->
-
-    <!-- Ecare Services -->
-
-    <!-- Service Icons -->
-
-    <!-- Appointment Section -->
 
     <TextView
         android:id="@+id/textView3"
@@ -186,6 +168,5 @@
             android:layout_height="wrap_content"
             android:orientation="vertical" />
     </ScrollView>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
