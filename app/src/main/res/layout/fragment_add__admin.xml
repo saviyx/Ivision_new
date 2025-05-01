@@ -148,7 +148,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/add_admin"
         android:layout_width="196dp"
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
