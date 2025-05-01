@@ -227,6 +227,7 @@ public class MainActivity extends AppCompatActivity {
                                                             new Alert().showAlert(MainActivity.this, "Done!", "Successfully logged");
 
                                                             if ("admin".equals(userType)) {
+//                                                                admin login
                                                                 Intent intent = new Intent(MainActivity.this, Admin_home.class);
                                                                 startActivity(intent);
                                                                 finish();
