@@ -26,6 +26,17 @@ public class Home extends AppCompatActivity {
             return insets;
         });
 
+        ImageView mapButton = findViewById(R.id.map);
+
+        mapButton.setOnClickListener(v -> {
+            Fragment mapFragment = new MapFragment();
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.main_scrollview, mapFragment);
+            transaction.addToBackStack(null);
+            transaction.commit();
+        });
+
+
         // Load initial fragment
         loadFragment(new Home_Fragment());
 
