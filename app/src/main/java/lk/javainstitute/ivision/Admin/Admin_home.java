@@ -7,7 +7,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.Fragment;
 
+import lk.javainstitute.ivision.Home_Fragment;
 import lk.javainstitute.ivision.R;
 
 public class Admin_home extends AppCompatActivity {
@@ -22,5 +24,18 @@ public class Admin_home extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+
+        // Load initial fragment
+        loadFragment(new Admin_Home_Fragment());
+
+    }
+
+    private boolean loadFragment(Fragment fragment) {
+        if (fragment != null) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.main_scrollview1, fragment).commit();
+            return true;
+        }
+        return false;
     }
 }
