@@ -2,6 +2,7 @@ package lk.javainstitute.ivision.Admin;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -10,8 +11,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.Firebase;
+import com.google.firebase.firestore.Filter;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.HashMap;
 
@@ -51,14 +56,39 @@ public class New_Admin_Save extends Fragment {
             adminData.put("verified", true);
 
             firestore.collection("User")
-                    .add(adminData)
-                    .addOnSuccessListener(aVoid -> {
-                        loading.stop();
+                            .where(
+                                    Filter.and(
+                                            Filter.equalTo("email",email),
+                                            Filter.equalTo("mobile",mobile)
+                                    )
+                            ).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
 
-                    })
-                    .addOnFailureListener(e -> {
-                        loading.stop();
+                            if (task.isSuccessful()){
+                                if (task.getResult().isEmpty()) {
+                                    firestore.collection("User")
+                                            .add(adminData)
+                                            .addOnSuccessListener(aVoid -> {
+                                                loading.stop();
+                                                new Alert().showAlert(requireActivity(),"Success","Admin added successfully" );
+                                                adminName.setText("");
+                                                adminEmail.setText("");
+                                                adminMobile.setText("");
+                                            })
+                                            .addOnFailureListener(e -> {
+                                                loading.stop();
+                                                new Alert().showAlert(requireActivity(),"Error!","Something Went Wrong" );
+                                            });
+                                }else {
+                                    new Alert().showAlert(requireActivity(),"Error!","This email or mobile number registered ad user" );
+
+                                }
+                            }
+                        }
                     });
+
+
 
         });
 
@@ -66,4 +96,8 @@ public class New_Admin_Save extends Fragment {
 
 
     }
+
+
+
+
 }
