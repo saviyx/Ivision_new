@@ -48,12 +48,13 @@ public class New_Admin_Save extends Fragment {
             adminData.put("mobile", mobile);
             adminData.put("password", "admin123");
             adminData.put("type", "admin");
-            adminData.put("verified", "true");
+            adminData.put("verified", true);
 
-            firestore.collection("user")
+            firestore.collection("User")
                     .add(adminData)
                     .addOnSuccessListener(aVoid -> {
                         loading.stop();
+
                     })
                     .addOnFailureListener(e -> {
                         loading.stop();

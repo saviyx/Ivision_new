@@ -224,12 +224,17 @@ public class MainActivity extends AppCompatActivity {
                                                             editor.apply();
 
                                                             loading.stop();
-                                                            new Alert().showAlert(MainActivity.this, "Done!", "Successfully logged");
+                                                           // new Alert().showAlert(MainActivity.this, "Done!", "Successfully logged");
 
                                                             if ("admin".equals(userType)) {
-                                                                Intent intent = new Intent(MainActivity.this, Admin_home.class);
-                                                                startActivity(intent);
-                                                                finish();
+                                                                if(Boolean.TRUE.equals(verified)){
+                                                                    Intent intent = new Intent(MainActivity.this, Admin_home.class);
+                                                                    startActivity(intent);
+                                                                    finish();
+                                                                }else {
+                                                                    new Alert().showAlert(MainActivity.this, "Error!", "This Admin has been deactivated please contact another Admin to activate account");
+                                                                }
+
                                                             } else {
                                                                 Intent intent = new Intent(MainActivity.this, Home.class);
                                                                 startActivity(intent);
