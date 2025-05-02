@@ -71,7 +71,7 @@ public class Admin_Status extends Fragment {
         }
 
         FirebaseFirestore.getInstance().collection("User")
-                .whereEqualTo("mobile", mobileNumber)
+                .whereEqualTo("mobileNumber", mobileNumber)
                 .get()
                 .addOnSuccessListener(queryDocumentSnapshots -> {
                     if (queryDocumentSnapshots.isEmpty()) {
