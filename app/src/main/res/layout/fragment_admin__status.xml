@@ -123,6 +123,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView42">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/patient_mobile"
             android:layout_width="272dp"
             android:layout_height="49dp"
             android:hint="Patient's Mobile" />
