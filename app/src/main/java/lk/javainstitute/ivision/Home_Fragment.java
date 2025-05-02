@@ -1,14 +1,23 @@
 package lk.javainstitute.ivision;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class Home_Fragment extends Fragment {
 
@@ -17,6 +26,28 @@ public class Home_Fragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_home_fragment, container, false);
+
+        SharedPreferences sharedPreferences = getContext().getSharedPreferences("USERPREF", getContext().MODE_PRIVATE);
+        String userId = sharedPreferences.getString("Logged_userId", "");
+
+        FirebaseFirestore firestore = FirebaseFirestore.getInstance();
+
+        firestore.collection("User").document(userId).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+
+                Log.i("TAG", "onSuccess: " + documentSnapshot);
+
+                TextView name = view.findViewById(R.id.user_name);
+                name.setText(documentSnapshot.getString("Name"));
+
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                new Alert().showAlert(getContext(),"Opps","Somthing Went Wrong." );
+            }
+        });
 
         LinearLayout appointmentCard = view.findViewById(R.id.apponment);
 

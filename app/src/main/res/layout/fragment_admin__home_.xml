@@ -115,7 +115,7 @@
                 app:cardElevation="4dp">
 
                 <LinearLayout
-                    android:id="@+id/apponment"
+                    android:id="@+id/apponment1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
@@ -150,7 +150,7 @@
                 app:cardElevation="4dp">
 
                 <LinearLayout
-                    android:id="@+id/glasses_status"
+                    android:id="@+id/glasses_status1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
@@ -185,7 +185,7 @@
                 app:cardElevation="4dp">
 
                 <LinearLayout
-                    android:id="@+id/eye_test"
+                    android:id="@+id/reports"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
@@ -228,7 +228,7 @@
                 app:cardElevation="4dp">
 
                 <LinearLayout
-                    android:id="@+id/eye_care"
+                    android:id="@+id/payment"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
@@ -263,7 +263,7 @@
                 app:cardElevation="4dp">
 
                 <LinearLayout
-                    android:id="@+id/appoiment_history"
+                    android:id="@+id/add_admin"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"

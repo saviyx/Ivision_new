@@ -201,7 +201,7 @@ public class SignUp extends AppCompatActivity {
             RequestBody body = RequestBody.create(json, MediaType.get("application/json; charset=utf-8"));
 
             Request request = new Request.Builder()
-                    .url("https://4aad-175-157-23-35.ngrok-free.app/Ivision/emailSend")
+                    .url("https://e389-123-231-105-114.ngrok-free.app/Ivision/emailSend")
                     .post(body)
                     .build();
 

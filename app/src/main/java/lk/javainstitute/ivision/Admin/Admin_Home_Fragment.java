@@ -3,64 +3,179 @@ package lk.javainstitute.ivision.Admin;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
+import lk.javainstitute.ivision.Appoinment_Fragment;
+import lk.javainstitute.ivision.Eye_Test_Fragment;
+import lk.javainstitute.ivision.Glass_Fragment;
+import lk.javainstitute.ivision.Home_Fragment;
 import lk.javainstitute.ivision.R;
+import lk.javainstitute.ivision.Review_Fragment;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Admin_Home_Fragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class Admin_Home_Fragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public Admin_Home_Fragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Admin_Home_Fragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static Admin_Home_Fragment newInstance(String param1, String param2) {
-        Admin_Home_Fragment fragment = new Admin_Home_Fragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        View view = inflater.inflate(R.layout.fragment_admin__home_, container, false);
+
+        LinearLayout appointmentCard = view.findViewById(R.id.apponment1);
+
+        appointmentCard.setOnClickListener(v -> {
+            Fragment appoinmentFragment = new Admin_appointment();
+
+
+            FragmentTransaction transaction = requireActivity()
+                    .getSupportFragmentManager()
+                    .beginTransaction() ;
+
+            // Hide this fragment
+            transaction.hide(Admin_Home_Fragment.this);
+
+            // Add the detail fragment to your activity container (NOT the linear layout)
+            // Make sure R.id.mainFragmentContainer is in your activity layout
+            transaction.add(R.id.main_scrollview1, appoinmentFragment);
+
+            // Add to back stack so pressing BACK will remove detail and unhide this
+            transaction.addToBackStack(null);
+
+            // Commit
+            transaction.commit();
+
+        });
+
+        LinearLayout glassesStatusCard = view.findViewById(R.id.glasses_status1);
+
+        glassesStatusCard.setOnClickListener(v -> {
+            Fragment glassesStatusFragment = new Admin_Status();
+
+
+            FragmentTransaction transaction = requireActivity()
+                    .getSupportFragmentManager()
+                    .beginTransaction();
+
+            // Hide this fragment
+            transaction.hide(Admin_Home_Fragment.this);
+
+            // Add the detail fragment to your activity container (NOT the linear layout)
+            // Make sure R.id.mainFragmentContainer is in your activity layout
+            transaction.add(R.id.main_scrollview1, glassesStatusFragment);
+
+            // Add to back stack so pressing BACK will remove detail and unhide this
+            transaction.addToBackStack(null);
+
+            // Commit
+            transaction.commit();
+
+        });
+
+        LinearLayout reportsCard = view.findViewById(R.id.reports);
+
+        reportsCard.setOnClickListener(v -> {
+            Fragment reportFragment = new Admin_Report();
+
+
+            FragmentTransaction transaction = requireActivity()
+                    .getSupportFragmentManager()
+                    .beginTransaction();
+
+            // Hide this fragment
+            transaction.hide(Admin_Home_Fragment.this);
+
+            // Add the detail fragment to your activity container (NOT the linear layout)
+            // Make sure R.id.mainFragmentContainer is in your activity layout
+            transaction.add(R.id.main_scrollview1, reportFragment);
+
+            // Add to back stack so pressing BACK will remove detail and unhide this
+            transaction.addToBackStack(null);
+
+            // Commit
+            transaction.commit();
+
+
+        });
+
+        LinearLayout paymentsCard = view.findViewById(R.id.payment);
+        paymentsCard.setOnClickListener(v ->{
+            Fragment paymentFragment = new Payment_History_Fragment();
+
+            FragmentTransaction transaction = requireActivity()
+                    .getSupportFragmentManager()
+                    .beginTransaction();
+
+            transaction.hide(Admin_Home_Fragment.this);
+
+            transaction.add(R.id.main_scrollview1,paymentFragment);
+
+            transaction.addToBackStack(null);
+            transaction.commit();
+
+        });
+
+        LinearLayout addAdminCard = view.findViewById(R.id.add_admin);
+
+        addAdminCard.setOnClickListener(v -> {
+            Fragment addAdminFragment = new Add_Admin();
+
+
+            FragmentTransaction transaction = requireActivity()
+                    .getSupportFragmentManager()
+                    .beginTransaction();
+
+            // Hide this fragment
+            transaction.hide(Admin_Home_Fragment.this);
+
+            // Add the detail fragment to your activity container (NOT the linear layout)
+            // Make sure R.id.mainFragmentContainer is in your activity layout
+            transaction.add(R.id.main_scrollview1, addAdminFragment);
+
+            // Add to back stack so pressing BACK will remove detail and unhide this
+            transaction.addToBackStack(null);
+
+            // Commit
+            transaction.commit();
+
+
+        });
+
+        LinearLayout reviewCard = view.findViewById(R.id.review);
+
+        reviewCard.setOnClickListener(v -> {
+            Fragment reviewFragment = new Review_Fragment();
+
+
+            FragmentTransaction transaction = requireActivity()
+                    .getSupportFragmentManager()
+                    .beginTransaction();
+
+            // Hide this fragment
+            transaction.hide(Admin_Home_Fragment.this);
+
+            // Add the detail fragment to your activity container (NOT the linear layout)
+            // Make sure R.id.mainFragmentContainer is in your activity layout
+            transaction.add(R.id.main_scrollview1, reviewFragment);
+
+            // Add to back stack so pressing BACK will remove detail and unhide this
+            transaction.addToBackStack(null);
+
+            // Commit
+            transaction.commit();
+
+
+        });
+
+
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_admin__home_, container, false);
+        return view;
     }
 }

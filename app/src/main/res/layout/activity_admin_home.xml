@@ -158,7 +158,7 @@
         app:layout_constraintTop_toBottomOf="@+id/background_wave2">
 
         <LinearLayout
-            android:id="@+id/main_scrollview"
+            android:id="@+id/main_scrollview1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical" />
