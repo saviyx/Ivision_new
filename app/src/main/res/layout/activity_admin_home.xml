@@ -103,7 +103,7 @@
         app:srcCompat="@drawable/addevent" />
 
     <ImageView
-        android:id="@+id/imageView15"
+        android:id="@+id/more"
         android:layout_width="39dp"
         android:layout_height="34dp"
         android:layout_marginBottom="16dp"
@@ -143,10 +143,10 @@
         android:layout_height="wrap_content"
         android:text="More"
         android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView15"
+        app:layout_constraintEnd_toEndOf="@+id/more"
         app:layout_constraintHorizontal_bias="0.562"
-        app:layout_constraintStart_toStartOf="@+id/imageView15"
-        app:layout_constraintTop_toBottomOf="@+id/imageView15" />
+        app:layout_constraintStart_toStartOf="@+id/more"
+        app:layout_constraintTop_toBottomOf="@+id/more" />
 
     <ScrollView
         android:id="@+id/home_view"

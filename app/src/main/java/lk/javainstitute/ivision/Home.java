@@ -4,17 +4,22 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
+import androidx.core.view.GravityCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-public class Home extends AppCompatActivity {
+import com.google.android.material.navigation.NavigationView;
 
+public class Home extends AppCompatActivity {
+    private DrawerLayout drawerLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +30,12 @@ public class Home extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        // Initialize DrawerLayout
+        drawerLayout = findViewById(R.id.main);
 
+        // Set up NavigationView
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        setupNavigationView(navigationView);
         ImageView mapButton = findViewById(R.id.map);
 
         mapButton.setOnClickListener(v -> {
@@ -59,7 +69,9 @@ public class Home extends AppCompatActivity {
             // Commit the transaction
             transaction.commit();
         });
-
+        // Set up more icon click listener to open navigation drawer
+        ImageView moreIcon = findViewById(R.id.more);
+        moreIcon.setOnClickListener(v -> openNavigationDrawer());
         // Set up home button click listener
         ImageView home = findViewById(R.id.home);
         home.setOnClickListener(v -> {
@@ -95,5 +107,57 @@ public class Home extends AppCompatActivity {
             return true;
         }
         return false;
+    }
+    private void openNavigationDrawer() {
+        if (drawerLayout != null) {
+            drawerLayout.openDrawer(GravityCompat.END); // Open from the right side
+        }
+    }
+
+    private void setupNavigationView(NavigationView navigationView) {
+        navigationView.setNavigationItemSelectedListener(item -> {
+            int itemId = item.getItemId();
+
+            if (itemId == R.id.nav_profile) {
+                // Navigate to profile settings
+                loadFragment(new Profile_Settings_Fragment());
+                drawerLayout.closeDrawers();
+                return true;
+            }
+            else if (itemId == R.id.nav_logout) {
+                // Handle logout
+                logout();
+                return true;
+            }
+
+            drawerLayout.closeDrawers();
+            return false;
+        });
+    }
+
+    private void logout() {
+        // Clear user session/preferences
+        // For example:
+        // SharedPreferences preferences = getSharedPreferences("user_prefs", MODE_PRIVATE);
+        // preferences.edit().clear().apply();
+
+        // Show logout message
+        Toast.makeText(this, "Logged out successfully", Toast.LENGTH_SHORT).show();
+
+        // Navigate to login screen
+        Intent loginIntent = new Intent(this, MainActivity.class);
+        loginIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(loginIntent);
+        finish();
+    }
+
+    @Override
+    public void onBackPressed() {
+        // Close drawer if open when back is pressed
+        if (drawerLayout != null && drawerLayout.isDrawerOpen(GravityCompat.END)) {
+            drawerLayout.closeDrawer(GravityCompat.END);
+        } else {
+            super.onBackPressed();
+        }
     }
 }
