@@ -22,7 +22,9 @@ import java.util.HashMap;
 
 import lk.javainstitute.ivision.Alert;
 import lk.javainstitute.ivision.Loading;
+import lk.javainstitute.ivision.MainActivity;
 import lk.javainstitute.ivision.R;
+import lk.javainstitute.ivision.Validations;
 
 public class New_Admin_Save extends Fragment {
 
@@ -47,47 +49,60 @@ public class New_Admin_Save extends Fragment {
             String email = adminEmail.getText().toString();
             String mobile = adminMobile.getText().toString();
 
-            HashMap<String, Object> adminData = new HashMap<>();
-            adminData.put("name", name);
-            adminData.put("email", email);
-            adminData.put("mobile", mobile);
-            adminData.put("password", "admin123");
-            adminData.put("type", "admin");
-            adminData.put("verified", true);
+            if (name.trim().isEmpty()){
+                loading.stop();
+                new Alert().showAlert(requireActivity(),"Opps..","Please Enter Your Name" );
+            }else if (email.trim().isEmpty()) {
+                loading.stop();
+                new Alert().showAlert(requireActivity(),"Opps..","Please Enter Your Email" );
+            } else if (!new Validations().isEmailValid(email)) {
+                loading.stop();
+                new Alert().showAlert(requireActivity(),"Opps..","Please Enter Valid Email" );
+            } else if (mobile.trim().isEmpty()) {
+                loading.stop();
+                new Alert().showAlert(requireActivity(),"Opps..","Please Enter Your Password" );
+            } else {
+                firestore.collection("User")
+                        .where(
+                                Filter.and(
+                                        Filter.equalTo("email",email),
+                                        Filter.equalTo("mobile",mobile)
+                                )
+                        ).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                            @Override
+                            public void onComplete(@NonNull Task<QuerySnapshot> task) {
 
-            firestore.collection("User")
-                            .where(
-                                    Filter.and(
-                                            Filter.equalTo("email",email),
-                                            Filter.equalTo("mobile",mobile)
-                                    )
-                            ).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                        @Override
-                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                if (task.isSuccessful()){
+                                    if (task.getResult().isEmpty()) {
+                                        HashMap<String, Object> adminData = new HashMap<>();
+                                        adminData.put("name", name);
+                                        adminData.put("email", email);
+                                        adminData.put("mobile", mobile);
+                                        adminData.put("password", "admin123");
+                                        adminData.put("type", "admin");
+                                        adminData.put("verified", true);
+                                        firestore.collection("User")
+                                                .add(adminData)
+                                                .addOnSuccessListener(aVoid -> {
+                                                    loading.stop();
+                                                    new Alert().showAlert(requireActivity(),"Success","Admin added successfully" );
+                                                    adminName.setText("");
+                                                    adminEmail.setText("");
+                                                    adminMobile.setText("");
+                                                })
+                                                .addOnFailureListener(e -> {
+                                                    loading.stop();
+                                                    new Alert().showAlert(requireActivity(),"Error!","Something Went Wrong" );
+                                                });
+                                    }else {
+                                        new Alert().showAlert(requireActivity(),"Error!","This email or mobile number registered as user" );
 
-                            if (task.isSuccessful()){
-                                if (task.getResult().isEmpty()) {
-                                    firestore.collection("User")
-                                            .add(adminData)
-                                            .addOnSuccessListener(aVoid -> {
-                                                loading.stop();
-                                                new Alert().showAlert(requireActivity(),"Success","Admin added successfully" );
-                                                adminName.setText("");
-                                                adminEmail.setText("");
-                                                adminMobile.setText("");
-                                            })
-                                            .addOnFailureListener(e -> {
-                                                loading.stop();
-                                                new Alert().showAlert(requireActivity(),"Error!","Something Went Wrong" );
-                                            });
-                                }else {
-                                    new Alert().showAlert(requireActivity(),"Error!","This email or mobile number registered ad user" );
-
+                                    }
                                 }
                             }
-                        }
-                    });
+                        });
 
+            }
 
 
         });
