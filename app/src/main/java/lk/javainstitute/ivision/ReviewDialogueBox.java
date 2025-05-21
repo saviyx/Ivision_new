@@ -77,7 +77,7 @@ public class ReviewDialogueBox extends DialogFragment {
             Toast.makeText(requireContext(), "Please sign in to submit a review", Toast.LENGTH_SHORT).show();
             return;
         }
-
+      //sp
         String reviewText = editTextReview.getText().toString().trim();
         float rating = ratingBar.getRating();
 
@@ -97,6 +97,7 @@ public class ReviewDialogueBox extends DialogFragment {
         if (userName == null || userName.isEmpty()) {
             userName = currentUser.getEmail();
             if (userName != null) {
+
                 userName = userName.split("@")[0]; // Use email prefix if no display name
             } else {
                 userName = "Anonymous";
